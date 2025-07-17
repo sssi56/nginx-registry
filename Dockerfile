@@ -1,4 +1,4 @@
-FROM python:3.12-alpine as fastapi
+FROM python:3.12-alpine
 
 WORKDIR /app
 
