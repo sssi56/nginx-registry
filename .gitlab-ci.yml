@@ -20,6 +20,6 @@ push-job:
 deploy-job:
   stage: deploy
   script:
-  - echo "Start deploy"
-  - docker-compose up -d
-  - echo "Finish deploy"
+    - echo "Start deploy"
+    - docker-compose up -d
+    - echo "Finish deploy"
