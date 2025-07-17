@@ -1,0 +1,15 @@
+
+services:
+  nginx-registry:
+    image: sssi56/nginx-registry:latest
+    container_name: nginx-registry
+    restart: always
+    ports:
+      - "8000:8000"
+    volumes:
+      - /opt/container-registry/container:/opt/container
+    logging:
+      driver: json-file
+      options:
+        max-size: "20m"
+        max-file: "5"

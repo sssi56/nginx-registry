@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добро пожаловать</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #333;
+        }
+        .download-links {
+            margin-top: 20px;
+        }
+        .download-links a {
+            margin: 5px 0;
+            text-decoration: none;
+            color: #007BFF;
+        }
+        .download-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Добро пожаловать!</h1>
+
+        <p>Все доступные файлы находятся в директории <code>/opt/container</code>.</p>
+
+        <div class="download-links">
+            <h2>Доступные файлы для скачивания:</h2>
+            {% if files %}
+                {% for file in files %}
+                    <a href="/opt/container/{{ file }}" download>{{ file }}</a><br>
+                {% endfor %}
+            {% else %}
+                <p>Файлы не найдены.</p>
+            {% endif %}
+        </div>
+    </body>
+</html>
