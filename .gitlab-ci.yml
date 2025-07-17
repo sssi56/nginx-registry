@@ -6,7 +6,7 @@ build-job:
   stage: build
   script:
     - echo "Start build"
-    - docker build --target nginx-registry -t sssi56/nginx-registry:latest .
+    - docker build -t sssi56/nginx-registry:latest .
     - echo "Finish build"
 
 push-job:
