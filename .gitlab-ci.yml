@@ -17,3 +17,9 @@ push-job:
     - docker push sssi56/nginx-registry:latest
     - echo "Finish push"
 
+deploy-job:
+  stage: deploy
+  script:
+  - echo "Start deploy"
+  - docker-compose up -d
+  - echo "Finish deploy"
