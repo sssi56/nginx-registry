@@ -7,7 +7,6 @@ app = FastAPI()
 
 # Настраиваем работу с шаблонами
 templates = Jinja2Templates(directory="templates")
-app.mount("/static", StaticFiles(directory="static"), name="static")
 
 # Путь к директории с файлами
 FILE_DIRECTORY = "/opt/container"
