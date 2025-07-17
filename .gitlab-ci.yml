@@ -1,0 +1,19 @@
+stages:
+  - build
+  - push
+
+build-job:
+  stage: build
+  script:
+    - echo "Start build"
+    - docker build --target nginx-registry -t sssi56/nginx-registry:latest .
+    - echo "Finish build"
+
+push-job:
+  stage: push
+  script:
+    - echo "Start push"
+    - docker login -u "$CI_REGISTRY_USER" --password "$CI_REGISTRY_PASSWORD"
+    - docker push sssi56/nginx-registry:latest
+    - echo "Finish push"
+
