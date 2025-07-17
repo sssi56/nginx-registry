@@ -22,5 +22,7 @@ deploy-job:
   stage: deploy
   script:
     - echo "Start deploy"
+    - docker stop nginx-registry
+    - docker rm nginx-registry
     - docker-compose up -d
     - echo "Finish deploy"
